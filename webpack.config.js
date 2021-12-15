@@ -46,7 +46,7 @@ module.exports = (env, argv) => {
       extensions: ['.js'],
       alias: {
         '@': path.resolve(__dirname, 'src'),
-        '@core': path.resolve(__dirname, 'core'),
+        '@core': path.resolve(__dirname, 'src', 'core'),
       },
     },
     devtool: isDev ? 'source-map' : false,
@@ -58,6 +58,7 @@ module.exports = (env, argv) => {
     devServer: {
       port: 3000,
       hot: true,
+      watchFiles: './',
     },
     plugins: plugins(),
     module: {
