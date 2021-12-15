@@ -58,7 +58,6 @@ module.exports = (env, argv) => {
     devServer: {
       port: 3000,
       hot: true,
-      watchFiles: './',
     },
     plugins: plugins(),
     module: {
