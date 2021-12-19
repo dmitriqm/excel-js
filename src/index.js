@@ -1,4 +1,4 @@
-import { Excel } from '@/components/excel/excel'
+import { Excel } from '@/components/excel/Excel'
 import './scss/index.scss'
 import { Header } from '@/components/header/Header'
 import { Toolbar } from '@/components/toolbar/Toolbar'

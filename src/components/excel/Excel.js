@@ -18,6 +18,8 @@ export class Excel {
       $root.append($el)
     })
 
+    console.log('start')
+    console.log('Really')
     return $root
   }
 
