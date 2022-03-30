@@ -3,7 +3,7 @@ class Dom {
     this.$el = typeof selector === 'string'
     // '#app'
      ? document.querySelector(selector)
-    // d.createElement
+    // document.createElement
      : selector
   }
 
