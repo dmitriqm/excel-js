@@ -15,5 +15,6 @@ module.exports = {
     'quote-props': 0,
     'linebreak-style': 0,
     'space-before-function-paren': 0,
+    'operator-linebreak': 0
   },
 }
