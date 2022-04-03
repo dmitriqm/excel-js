@@ -20,6 +20,7 @@
     min-width: $info-cell-width;
     height: 100%;
     border: 1px solid $border-color;
+    min-height: 100%;
     background: #f8f9fa;
     border-top: none;
     position: relative;
@@ -69,9 +70,10 @@
     opacity: 0;
     bottom: 0;
     background: $primary-color;
+    z-index: 1000;
 
     &:hover {
-      opacity: 1;
+      opacity: 1!important;
     }
   }
 

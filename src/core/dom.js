@@ -59,6 +59,16 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector)
   }
+
+  css(styles = {}) {
+    Object
+        .keys(styles)
+        .forEach((key) => {
+          this.$el.style[key] = styles[key]
+        })
+
+    return this
+  }
 }
 
 export function $(selector) {
@@ -73,4 +83,15 @@ $.create = (tagName, classes = '') => {
   }
 
   return $(el)
+}
+
+$.all = (selector) => {
+  const domInstanseArray = []
+
+  document.querySelectorAll(selector)
+      .forEach((el) =>
+        domInstanseArray.push($(el))
+      )
+
+  return domInstanseArray
 }
