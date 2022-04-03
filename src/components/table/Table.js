@@ -13,7 +13,7 @@ export class Table extends ExcelComponent {
   }
 
   toHTML() {
-    return createTable(24)
+    return createTable(20)
   }
 
   onMousedown(event) {
@@ -24,14 +24,20 @@ export class Table extends ExcelComponent {
       const $parent = $resizer.closest('[data-type="resizable"]')
       const coords = $parent.getCoords()
 
+      let resizeValue = 0
+
       document.onmousemove = (e) => {
         const delta = e.pageX - coords.right
-        const value = coords.width + delta
-        $parent.$el.style.width = value + 'px'
+        resizeValue = coords.width + delta
+        $parent.$el.style.width = resizeValue + 'px'
       }
 
       document.onmouseup = (e) => {
         document.onmousemove = null
+
+        this.$root.findAll(`[data-col="${$parent.data.col}"]`)
+            .forEach((el) => el.style.width = resizeValue + 'px')
+
         document.onmouseup = null
       }
     }
